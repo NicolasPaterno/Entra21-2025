@@ -8,6 +8,7 @@ namespace POO_Lanchonete
         public static void Main(string[] args)
         {
             ManagerMenu managerMenu = new ManagerMenu();
+            ManagerOrder managerOrder = new ManagerOrder();
             Console.WriteLine("Menu de pedidos");
             while (true)
             {
@@ -45,7 +46,36 @@ namespace POO_Lanchonete
                     case 3:
                         Console.WriteLine("Cardápio\n-----------------------");
                         Console.WriteLine();
+                        if (managerMenu.products.Count == 0)
+                        {
+                            break;
+                        }
                         managerMenu.ListarMenu();
+
+                        while (true)
+                        {
+                            Console.WriteLine("Digite o ID do produto para adicionar ao pedido ou 0 para sair.");
+                            int op = int.Parse(Console.ReadLine());
+
+                            if (op == 0)
+                                break;
+
+                            Product selectedProduct = managerMenu.GetProductById(op);
+
+                            if (selectedProduct != null)
+                            {
+                                managerOrder.AddOrder(selectedProduct);
+                                Console.WriteLine($"{selectedProduct.Name} foi adicionado ao pedido.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Produto não encontrado.");
+                            }
+                        }
+                        break;
+
+                    case 4:
+                        managerOrder.ListarOrder();
                         break;
 
                     default:
