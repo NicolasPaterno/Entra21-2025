@@ -1,70 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace POO_Lanchonete
+﻿namespace POO_Lanchonete
 {
     public class ManagerOrder
     {
-        public Dictionary<long, Product> products;  // Armazena todos os produtos
-        public Dictionary<long, Dictionary<long, Product>> orders; // Armazena pedidos (cada um com produtos)
-
+        private List<List<Product>> orders;
+        private List<Product> tempOrder;
         private static long currentOrderId = 0;
-        private static long currentProductId = 0;
 
         public ManagerOrder()
         {
-            this.products = new Dictionary<long, Product>();
-            this.orders = new Dictionary<long, Dictionary<long, Product>>();
+            this.orders = new List<List<Product>>();
+            this.tempOrder = new List<Product>();
         }
 
         public void AddOrder(Product product)
         {
-            long idProduct = ++currentProductId;
-            long idOrder = ++currentOrderId;
-
-            // Adiciona o produto no dicionário geral de produtos
-            products.Add(idProduct, product);
-
-            // Cria um novo pedido contendo esse produto
-            Dictionary<long, Product> orderProducts = new Dictionary<long, Product>
-        {
-            { idProduct, product }
-        };
-
-            // Adiciona o pedido no dicionário de pedidos
-            orders.Add(idOrder, orderProducts);
+            tempOrder.Add(product);
+            Console.WriteLine($"Produto {product.Name} adicionado ao pedido!");
         }
 
-        public void ListarOrder()
+        public void FinalizarPedido()
         {
-            double sumOrder = 0;
-            if (products.Count == 0)
+            if (tempOrder.Count == 0)
             {
-                Console.WriteLine("Não há produtos no cardápio!");
+                Console.WriteLine("O pedido está vazio. Adicione produtos antes de finalizar.");
                 return;
             }
-            foreach (var order in orders)
-            {
-                Console.WriteLine($"Pedido nº{currentOrderId}");
-               foreach (var product in order.Value)
-                {
-                    Console.WriteLine($"  - Produto: {product.Value.Name}, Preço: R${product.Value.Price}");
-                    sumOrder += product.Value.Price;
-                }
-            }
-                    Console.WriteLine($"Total R${sumOrder}");
+
+            orders.Add(new List<Product>(tempOrder));
+            currentOrderId++;
+            tempOrder.Clear();
+
+            Console.WriteLine($"Pedido {currentOrderId} finalizado com sucesso!");
         }
 
         public void RemoveOrder(long id)
         {
-            products.Remove(id);
+            bool found = false;
+
+            foreach (List<Product> order in orders)
+            {
+                foreach (Product product in order)
+                {
+                    if (product.ID == id)
+                    {
+                        order.Remove(product);
+                        Console.WriteLine($"Produto {product.Name} removido do pedido.");
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) break;
+            }
+
+            if (!found)
+            {
+                Console.WriteLine("Produto não encontrado em nenhum pedido.");
+            }
         }
 
+        public void ListarOrder()
+        {
+            double sum = 0;
+            if (orders.Count == 0)
+            {
+                Console.WriteLine("Nenhum pedido realizado.");
+                return;
+            }
 
-
+            Console.WriteLine("\nPedidos Realizados:\n ____________________________________");
+            for (int i = 0; i < orders.Count; i++)
+            {
+                Console.WriteLine($"Pedido {i + 1}:");
+                foreach (Product product in orders[i])
+                {
+                    sum += product.Price;
+                    Console.WriteLine($"Produto: {product.Name}, Preço: R${product.Price:F2}");
+                }
+                Console.WriteLine($"total: R${sum}");
+                Console.WriteLine("_____________________________________________________________");
+            }
+        }
     }
 }
