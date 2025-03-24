@@ -1,0 +1,15 @@
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.csproj.AssemblyReference.cache
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.AssemblyInfoInputs.cache
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.AssemblyInfo.cs
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.csproj.CoreCompileInputs.cache
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\bin\Debug\net7.0\LocadoraVeiculos.exe
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\bin\Debug\net7.0\LocadoraVeiculos.deps.json
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\bin\Debug\net7.0\LocadoraVeiculos.runtimeconfig.json
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\bin\Debug\net7.0\LocadoraVeiculos.dll
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\bin\Debug\net7.0\LocadoraVeiculos.pdb
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.dll
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\refint\LocadoraVeiculos.dll
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.pdb
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\LocadoraVeiculos.genruntimeconfig.cache
+C:\Users\nicolas.santos11\source\repos\Projetos_Entra21\LocadoraVeiculos\obj\Debug\net7.0\ref\LocadoraVeiculos.dll
