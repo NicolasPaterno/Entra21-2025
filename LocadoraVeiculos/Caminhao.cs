@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LocadoraVeiculos
 {
-    internal class Caminhao : Veiculo, IVeiculo
+    internal class Caminhao : Veiculo
     {
         public Caminhao(string modelo, string marca, DateOnly ano, int nDias, double aluguelDia) : base(modelo, marca, ano, nDias, aluguelDia)
         {

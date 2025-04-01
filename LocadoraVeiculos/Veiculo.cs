@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LocadoraVeiculos
 {
-    public class Veiculo
+    public class Veiculo : IVeiculo
     {
         private string _modelo;
         private string _marca;
